@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,8 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -844,8 +842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -957,8 +953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -1265,8 +1259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -1422,6 +1414,100 @@ Transform:
   m_Father: {fileID: 1540779197}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &403780000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403780001}
+  - component: {fileID: 403780004}
+  - component: {fileID: 403780003}
+  - component: {fileID: 403780002}
+  m_Layer: 5
+  m_Name: gameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &403780001
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403780000}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 504391528}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 204.18, y: 532.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &403780002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403780000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5c80daa4bd24102abec642517c7548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &403780003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403780000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 75
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '
+
+'
+--- !u!222 &403780004
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403780000}
+  m_CullTransparentMesh: 0
 --- !u!1 &409841671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,8 +1555,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -1676,8 +1760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -1867,8 +1949,9 @@ GameObject:
   - component: {fileID: 504391527}
   - component: {fileID: 504391526}
   - component: {fileID: 504391525}
+  - component: {fileID: 504391529}
   m_Layer: 5
-  m_Name: TowersLeftCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1946,6 +2029,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 440333152}
+  - {fileID: 403780001}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1954,6 +2038,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!222 &504391529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504391524}
+  m_CullTransparentMesh: 0
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,8 +2221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -2475,8 +2565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -2554,6 +2642,7 @@ GameObject:
   - component: {fileID: 1001607302}
   - component: {fileID: 1001607301}
   - component: {fileID: 1001607305}
+  - component: {fileID: 1001607306}
   m_Layer: 0
   m_Name: EndCylinder
   m_TagString: Endpoint
@@ -2646,6 +2735,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4430437370c41cfb7bebdddfaa86a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1001607306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001607300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5c80daa4bd24102abec642517c7548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017848272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,8 +2794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -3038,8 +3137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -3204,6 +3301,7 @@ MonoBehaviour:
   - {fileID: 1723843265}
   - {fileID: 1870414298}
   speed: 3
+  gameOver: {fileID: 403780003}
 --- !u!135 &1293736541
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3397,8 +3495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 440333153}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -3738,8 +3834,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -3955,8 +4049,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -4373,8 +4465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 440333153}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -4427,8 +4517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -4540,8 +4628,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}
@@ -4742,8 +4828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  coins: 0
-  coinText: {fileID: 0}
   startColor: {r: 0.5849056, g: 0.5766287, b: 0.5766287, a: 1}
   mouseOverColor: {r: 0.5179334, g: 0.9716981, b: 0.54062706, a: 1}
   mouseOverAlreadyPlaced: {r: 0.9433962, g: 0.06674972, b: 0.06674972, a: 0}

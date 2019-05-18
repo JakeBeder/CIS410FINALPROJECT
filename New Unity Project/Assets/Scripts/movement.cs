@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class movement : MonoBehaviour
     public float speed;
 
     private int current;
+
+    public Text gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,8 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("Endpoint"))
         {
             gameObject.SetActive(false);
+            gameOver.text = "Game Over!";
+
         }
     }
 
