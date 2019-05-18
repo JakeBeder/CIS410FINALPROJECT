@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -9,6 +10,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     public GameObject towerPrefab;
     public static int towersPlaced = 0;
+    public Text coinText;
+    public static int coinsLeft = 400;
 
     //public static object Instance { get; internal set; }
 
@@ -31,4 +34,5 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+
 }
