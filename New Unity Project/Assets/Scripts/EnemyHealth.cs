@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class EnemyHealth : MonoBehaviour
     public int healthPoints = 100;
     public Bullet bullet;
 
-    private int currentHealthPoints;
+    private float currentHealthPoints;
     public bool alive;
 
     private int count = 0;
     public GameObject pre_enemy;
+
+    public RectTransform health_bar;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +29,13 @@ public class EnemyHealth : MonoBehaviour
             InvokeRepeating("spawnEnemy", 5.0f, 8.0f);
 
         }
-        */      
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void loseHp(Bullet b)
@@ -43,6 +46,8 @@ public class EnemyHealth : MonoBehaviour
             alive = false;
             gameObject.SetActive(false);
         }
+
+        health_bar.sizeDelta = new Vector2(currentHealthPoints*2, health_bar.sizeDelta.y);
     }
 
     public void OnTriggerEnter(Collider other)
@@ -55,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void spawnEnemy()
     {
-        Instantiate(pre_enemy, new Vector3(-.5f,.5f,-6.1f), pre_enemy.transform.rotation);
+        Instantiate(pre_enemy, new Vector3(-.5f, .5f, -6.1f), pre_enemy.transform.rotation);
         count++;
     }
 }

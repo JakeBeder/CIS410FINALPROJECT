@@ -11,6 +11,7 @@ public class Tank_Location_Script : MonoBehaviour
     public Color mouseOverAlreadyPlaced;
     bool mouseOver = false;
 
+
     public Testscript ts;
     public bool isPlaced = false;
 
@@ -38,7 +39,7 @@ public class Tank_Location_Script : MonoBehaviour
         {
             GetComponent<Renderer>().material.SetColor("_Color", mouseOverColor);
             //Debug.Log(count);
-            if (Input.GetMouseButtonDown(0) & (count < 1))
+            if ((Input.GetMouseButtonDown(0) & (count < 1)) & (GameManager.towersPlaced < 4))
             {
                 PlaceTower();
                 count += 1;
@@ -57,6 +58,8 @@ public class Tank_Location_Script : MonoBehaviour
     { 
         Instantiate(GameManager.Instance.towerPrefab, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
         isPlaced = true;
+        GameManager.towersPlaced += 1;
+        print(GameManager.towersPlaced);
         //Debug.Log(transform.position);
 
         //GameObject bullet = GameObject.Find("Bullet");

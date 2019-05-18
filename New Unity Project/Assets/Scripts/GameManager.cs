@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
     //Is temporary, will be replaced later.
     [SerializeField]
     public GameObject towerPrefab;
+    public static int towersPlaced = 0;
 
     //public static object Instance { get; internal set; }
 

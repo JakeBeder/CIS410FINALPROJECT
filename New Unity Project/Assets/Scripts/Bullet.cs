@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    float moveSpeed = 7f;
+    public float moveSpeed = 50f;
 
     Rigidbody rb;
-    public int damage = 100;
+    public float damage;
 
     movement target;
     Vector3 moveDirection;
