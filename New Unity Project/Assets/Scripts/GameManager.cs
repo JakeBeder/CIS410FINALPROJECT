@@ -11,7 +11,9 @@ public class GameManager : Singleton<GameManager>
     public GameObject towerPrefab;
     public static int towersPlaced = 0;
     public Text coinText;
-    public static int coinsLeft = 400;
+    public static int coinsLeft = 500;
+    public static int lives = 3;
+    public static int enemies = 10;
 
     //public static object Instance { get; internal set; }
 

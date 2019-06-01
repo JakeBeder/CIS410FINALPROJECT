@@ -26,8 +26,6 @@ public class Tank_Location_Script : MonoBehaviour
         //coins = GetComponent<CoinTotalScript>();
         //coins.coinDecrementer(GameManager.towersPlaced);
 
-
-
     }
 
     // Update is called once per frame
@@ -48,7 +46,7 @@ public class Tank_Location_Script : MonoBehaviour
         {
             GetComponent<Renderer>().material.SetColor("_Color", mouseOverColor);
             //Debug.Log(count);
-            if ((Input.GetMouseButtonDown(0) & (count < 1)) & (GameManager.towersPlaced < 4))
+            if ((Input.GetMouseButtonDown(0) & (count < 1)) & (GameManager.coinsLeft >= 100))
             {
 
                 count += 1;
@@ -70,7 +68,7 @@ public class Tank_Location_Script : MonoBehaviour
         isPlaced = true;
         GameManager.towersPlaced += 1;
         GameManager.coinsLeft = GameManager.coinsLeft - 100;
-        print(GameManager.towersPlaced);
+        //print(GameManager.towersPlaced);
         //coins.coinDecrementer(GameManager.towersPlaced);
         //Debug.Log(transform.position);
 

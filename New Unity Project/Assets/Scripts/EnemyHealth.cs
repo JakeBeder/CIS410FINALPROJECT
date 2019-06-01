@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     private float currentHealthPoints;
     public bool alive;
-
+    public Text gameOver;
     private int count = 0;
     public GameObject pre_enemy;
 
@@ -20,6 +21,14 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        // bullet = (Bullet)Resources.Load("Prefabs/Bullet", typeof(GameObject));
+
+        //pre_enemy = (GameObject)Resources.Load("Prefabs/Enemy", typeof(GameObject));
+
+        //health_bar = (RectTransform)Resources.Load("Prefabs/Enemy/HealthBarCanvas/Background/Foreground", typeof(GameObject));
+        gameOver = GameObject.Find("gameOver").GetComponent<Text>();
         currentHealthPoints = healthPoints;
         alive = true;
         //code to call function to spawn new enemies.
@@ -44,7 +53,13 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealthPoints <= 0)
         {
             alive = false;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            if (GameManager.enemies == 0)
+            {
+                gameOver.text = "You win!";
+            }
+            GameManager.coinsLeft += 25;
+            //gameObject.SetActive(false);
         }
 
         health_bar.sizeDelta = new Vector2(currentHealthPoints*2, health_bar.sizeDelta.y);

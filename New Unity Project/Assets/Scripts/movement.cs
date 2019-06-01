@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class movement : MonoBehaviour
 {
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
-    public Transform[] target;
+    private Transform[] target = new Transform[4];
 
     public float speed;
 
@@ -16,9 +16,28 @@ public class movement : MonoBehaviour
 
     public Text gameOver;
 
+    GameObject theGround;
+    Testscript groundTestScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        theGround = GameObject.Find("Ground");
+        groundTestScript = theGround.GetComponent<Testscript>();
+
+        GameObject enemyMovement1 = GameObject.Find("EnemyMovement_1");
+        GameObject enemyMovement2 = GameObject.Find("EnemyMovement_2");
+        GameObject enemyMovement3 = GameObject.Find("EnemyMovement_3");
+        GameObject enemyMovement4 = GameObject.Find("EnemyMovement_4");
+
+        gameOver = GameObject.Find("gameOver").GetComponent<Text>();
+
+        target[0] = enemyMovement1.transform;
+        target[1] = enemyMovement2.transform;
+        target[2] = enemyMovement3.transform;
+        target[3] = enemyMovement4.transform;
+
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -48,7 +67,14 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("Endpoint"))
         {
             gameObject.SetActive(false);
-            gameOver.text = "Game Over!";
+
+            GameManager.lives -= 1;
+            print(GameManager.lives);
+            if (GameManager.lives == 0)
+            {
+                gameOver.text = "Game Over!";
+            }
+
 
         }
     }

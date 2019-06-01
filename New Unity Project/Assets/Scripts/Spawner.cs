@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ public class Spawner : MonoBehaviour
     public int count;
 
 
+    public static event Action EnemySpawned;
+
+    Vector3 height = new Vector3(0.0f, 0.5f, 0.0f);
+    public GameObject StartLocation;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +27,16 @@ public class Spawner : MonoBehaviour
 
     public void SpawnObject()
     {
-        count += 1;
-        if (count < 3)
+        if (GameManager.enemies > 0)
         {
-            spawnee.SetActive(true);
-            //Instantiate(spawnee, transform.position, transform.rotation);
-            //spawnee.SetActive(true);
-            if (stopSpawning)
-            {
-                CancelInvoke("SpawnObject");
-            }
+            GameManager.enemies -= 1;
+            GameObject clone = (GameObject)Instantiate(spawnee, StartLocation.transform.position + height, StartLocation.transform.rotation);
+            EnemySpawned();
         }
 
+
+
     }
+
+
 }
